@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/activity_walkthrough_next">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/activity_walkthrough_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <cuongvo.ndroid_walkthrough_with_oop.view.IndicatorView
+            android:id="@+id/indicator_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/activity_walkthrough_next"
+        style="@style/TextStyle_16SP_Normal_White_With_Blue_Bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="@string/next"
+        android:textAllCaps="true" />
+</RelativeLayout>

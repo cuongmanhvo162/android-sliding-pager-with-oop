@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">ndroid-walkthrough-with-oop</string>
+    <string name="app_name">android-walkthrough-with-oop</string>
+
+    <string name="next">Next</string>
+
+    <string name="step_1">Step 1</string>
+    <string name="step_2">Step 2</string>
+    <string name="step_3">Step 3</string>
+    <string name="step_4">Step 4</string>
+    <string name="step_5">Step 5</string>
+    <string name="step_6">Step 6</string>
+    <string name="step_7">Step 7</string>
+    <string name="step_8">Step 8</string>
+    <string name="step_9">Step 9</string>
+
+    <string name="pasta_1">Start Your Dough</string>
+    <string name="pasta_2">Whisk and Knead The Dough</string>
+    <string name="pasta_3">Let The Dough Rest</string>
+    <string name="pasta_4">Divide The Dough</string>
+    <string name="pasta_5">Roll The Dough</string>
+    <string name="pasta_6">Keep Rolling</string>
+    <string name="pasta_7">Slice Noodles</string>
+    <string name="pasta_8">Loosen The Noodles</string>
+    <string name="pasta_9">Cook The Noodles</string>
 </resources>
