@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -20,6 +22,9 @@ import cuongvo.android_walkthrough_with_oop.view.IndicatorView;
  */
 
 public class WalkthroughActivity extends Activity {
+
+    @BindView(R.id.activity_walkthrough_next)
+    Button mNext;
 
     @BindView(R.id.activity_walkthrough_list)
     ViewPager mWalkthroughList;
@@ -39,6 +44,15 @@ public class WalkthroughActivity extends Activity {
         setContentView(R.layout.activity_walkthrough);
 
         ButterKnife.bind(this);
+
+        mNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextItem = mWalkthroughList.getCurrentItem();
+                nextItem = nextItem + 1;
+                mWalkthroughList.setCurrentItem(nextItem, true);
+            }
+        });
 
     }
 

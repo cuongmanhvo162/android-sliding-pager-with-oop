@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.widget.EditText;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cuongvo.android_walkthrough_with_oop.data.ComicCharacterData;
 import cuongvo.android_walkthrough_with_oop.data.SlideData;
 import cuongvo.android_walkthrough_with_oop.view.IndicatorView;
 import cuongvo.android_walkthrough_with_oop.adapter.SlidePagerAdapter;
@@ -19,6 +22,9 @@ import cuongvo.android_walkthrough_with_oop.util.DataUtil;
  */
 
 public class ComicCharacterActivity extends Activity {
+
+    @BindView(R.id.activity_comic_character_description)
+    EditText mDescription;
 
     @BindView(R.id.activity_comic_character_list)
     ViewPager mWalkthroughList;
@@ -35,6 +41,8 @@ public class ComicCharacterActivity extends Activity {
         setContentView(R.layout.activity_comic_character);
 
         ButterKnife.bind(this);
+
+        mDescription.setKeyListener(null);
     }
 
     @Override
@@ -57,17 +65,23 @@ public class ComicCharacterActivity extends Activity {
         mWalkthroughList.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                Log.d("Comic","page scrollered");
 
+                ComicCharacterData comicCharacterData = (ComicCharacterData) mSlidePagerAdapter.getItemAt(position);
+                mDescription.setText(comicCharacterData.getDescription());
             }
 
             @Override
             public void onPageSelected(int position) {
+                Log.d("Comic","page selected");
+
                 for (int i = 0; i < list.size(); i++) {
                     if (mSlidePagerAdapter.getItemAt(i).isSelected()) {
                         mSlidePagerAdapter.getItemAt(i).setSelected(false);
                         mSlidePagerAdapter.getItemAt(position).setSelected(true);
                     }
                 }
+
                 mIndicatorView.setSlideData(mSlidePagerAdapter.getList());
             }
 

@@ -4,16 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/activity_comic_character_list"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content">
 
-    <cuongvo.android_walkthrough_with_oop.view.IndicatorView
-        android:id="@+id/indicator_list"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/activity_comic_character_list"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <cuongvo.android_walkthrough_with_oop.view.IndicatorView
+            android:id="@+id/indicator_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/activity_comic_character_description"
+        style="@style/TextStyle_16SP_Normal_Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_white_bg_white_border"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:scrollbars="none" />
 </LinearLayout>

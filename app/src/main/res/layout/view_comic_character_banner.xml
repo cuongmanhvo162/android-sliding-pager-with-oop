@@ -20,15 +20,4 @@
         android:padding="8dp"
         android:text="text" />
 
-    <TextView
-        android:id="@+id/view_comic_character_description"
-        style="@style/TextStyle_16SP_Normal_White"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:ellipsize="end"
-        android:lines="4"
-        android:padding="8dp"
-        android:text="text" />
-
 </FrameLayout>

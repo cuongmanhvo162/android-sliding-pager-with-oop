@@ -24,9 +24,6 @@ public class ComicCharacterBannerView extends LinearLayout {
     @BindView(R.id.view_comic_character_title)
     TextView mTitle;
 
-    @BindView(R.id.view_comic_character_description)
-    TextView mDescription;
-
     @BindView(R.id.view_comic_character_image)
     ImageView mImage;
 
@@ -69,9 +66,12 @@ public class ComicCharacterBannerView extends LinearLayout {
         this.mComicCharacterData = data;
 
         mTitle.setText(data.getTitle());
-        mDescription.setText(data.getDescription());
         mImage.setImageResource(data.getImageId());
-
     }
+
+    public ComicCharacterData getComicCharacterData() {
+        return this.mComicCharacterData;
+    }
+
 
 }
