@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <cuongvo.ndroid_walkthrough_with_oop.view.IndicatorView
+        <cuongvo.android_walkthrough_with_oop.view.IndicatorView
             android:id="@+id/indicator_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

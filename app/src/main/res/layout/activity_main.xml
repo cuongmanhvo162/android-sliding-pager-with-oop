@@ -5,7 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cuongvo.ndroid_walkthrough_with_oop.MainActivity">
+    tools:context="cuongvo.android_walkthrough_with_oop.MainActivity">
 
+    <Button
+        android:id="@+id/activity_main_walkthrough"
+        style="@style/TextStyle_16SP_Normal_White_With_Blue_Bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Walkthrough" />
+
+    <Button
+        android:id="@+id/activity_main_comic_character"
+        style="@style/TextStyle_16SP_Normal_White_With_Blue_Bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Comic Character" />
 
 </LinearLayout>

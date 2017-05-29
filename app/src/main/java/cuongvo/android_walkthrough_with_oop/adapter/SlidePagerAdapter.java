@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop.adapter;
+package cuongvo.android_walkthrough_with_oop.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import cuongvo.ndroid_walkthrough_with_oop.data.SlideData;
-import cuongvo.ndroid_walkthrough_with_oop.data.WalkthroughData;
-import cuongvo.ndroid_walkthrough_with_oop.view.ComicCharacterBannerView;
-import cuongvo.ndroid_walkthrough_with_oop.view.WalkthroughView;
+import cuongvo.android_walkthrough_with_oop.data.ComicCharacterData;
+import cuongvo.android_walkthrough_with_oop.data.SlideData;
+import cuongvo.android_walkthrough_with_oop.data.WalkthroughData;
+import cuongvo.android_walkthrough_with_oop.view.ComicCharacterBannerView;
+import cuongvo.android_walkthrough_with_oop.view.WalkthroughView;
 
 /**
  * Created by cuongvo on 5/28/17.
@@ -39,15 +40,21 @@ public class SlidePagerAdapter extends PagerAdapter {
         if (mSlideType.equals(WALKTHROUGH_DATA)) {
             WalkthroughView walkthroughView = new WalkthroughView(mContext);
             walkthroughView.setWalkthroughData((WalkthroughData) slideData);
+
             container.addView(walkthroughView);
 
             return walkthroughView;
 
-        } else {
+        } else if (mSlideType.equals(COMIC_CHARACTER_DATA)) {
             ComicCharacterBannerView comicCharacterBannerView = new ComicCharacterBannerView(mContext);
+            comicCharacterBannerView.setComicCharacterData((ComicCharacterData) slideData);
+
             container.addView(comicCharacterBannerView);
 
             return comicCharacterBannerView;
+
+        } else {
+            return super.instantiateItem(container, position);
         }
     }
 
@@ -66,11 +73,11 @@ public class SlidePagerAdapter extends PagerAdapter {
         container.removeView((View) object);
     }
 
-    public SlideData getItemAt(int position){
+    public SlideData getItemAt(int position) {
         return this.mList.get(position);
     }
 
-    public List<SlideData> getList(){
+    public List<SlideData> getList() {
         return this.mList;
     }
 }

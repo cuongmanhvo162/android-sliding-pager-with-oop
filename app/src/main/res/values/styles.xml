@@ -21,6 +21,18 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="TextStyle_18SP_Bold_White">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyle_24SP_Bold_White">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextStyle_16SP_Normal_Gray">
         <item name="android:textColor">@color/colorGray</item>
         <item name="android:textSize">16sp</item>

@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop.view;
+package cuongvo.android_walkthrough_with_oop.view;
 
 import android.content.Context;
 import android.os.Build;
@@ -7,16 +7,15 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cuongvo.ndroid_walkthrough_with_oop.R;
-import cuongvo.ndroid_walkthrough_with_oop.adapter.IndicatorAdapter;
-import cuongvo.ndroid_walkthrough_with_oop.data.SlideData;
+import cuongvo.android_walkthrough_with_oop.data.SlideData;
+import cuongvo.android_walkthrough_with_oop.R;
+import cuongvo.android_walkthrough_with_oop.adapter.IndicatorAdapter;
 
 /**
  * Created by cuongvo on 5/28/17.

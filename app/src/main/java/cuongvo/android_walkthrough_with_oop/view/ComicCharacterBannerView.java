@@ -1,22 +1,36 @@
-package cuongvo.ndroid_walkthrough_with_oop.view;
+package cuongvo.android_walkthrough_with_oop.view;
 
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import cuongvo.ndroid_walkthrough_with_oop.R;
+import cuongvo.android_walkthrough_with_oop.data.ComicCharacterData;
+import cuongvo.android_walkthrough_with_oop.R;
 
 /**
  * Created by cuongvo on 5/28/17.
  */
 
-public class ComicCharacterBannerView extends LinearLayout{
+public class ComicCharacterBannerView extends LinearLayout {
+
+    @BindView(R.id.view_comic_character_title)
+    TextView mTitle;
+
+    @BindView(R.id.view_comic_character_description)
+    TextView mDescription;
+
+    @BindView(R.id.view_comic_character_image)
+    ImageView mImage;
+
+    private ComicCharacterData mComicCharacterData;
     private Context mContext;
 
     public ComicCharacterBannerView(Context context) {
@@ -44,16 +58,20 @@ public class ComicCharacterBannerView extends LinearLayout{
         init(context);
     }
 
-
     private void init(Context context) {
         this.mContext = context;
         View view = inflate(mContext, R.layout.view_comic_character_banner, this);
-
-    }
-
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
         ButterKnife.bind(this);
+
     }
+
+    public void setComicCharacterData(ComicCharacterData data) {
+        this.mComicCharacterData = data;
+
+        mTitle.setText(data.getTitle());
+        mDescription.setText(data.getDescription());
+        mImage.setImageResource(data.getImageId());
+
+    }
+
 }

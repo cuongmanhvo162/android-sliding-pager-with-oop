@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop.view;
+package cuongvo.android_walkthrough_with_oop.view;
 
 import android.content.Context;
 import android.os.Build;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cuongvo.ndroid_walkthrough_with_oop.R;
-import cuongvo.ndroid_walkthrough_with_oop.data.WalkthroughData;
+import cuongvo.android_walkthrough_with_oop.data.WalkthroughData;
+import cuongvo.android_walkthrough_with_oop.R;
 
 /**
  * Created by cuongvo on 5/28/17.

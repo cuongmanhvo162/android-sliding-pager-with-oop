@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop.data;
+package cuongvo.android_walkthrough_with_oop.data;
 
 /**
  * Created by cuongvo on 5/28/17.

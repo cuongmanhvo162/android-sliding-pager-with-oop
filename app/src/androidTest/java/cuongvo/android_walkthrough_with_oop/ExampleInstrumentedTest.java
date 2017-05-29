@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop;
+package cuongvo.android_walkthrough_with_oop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

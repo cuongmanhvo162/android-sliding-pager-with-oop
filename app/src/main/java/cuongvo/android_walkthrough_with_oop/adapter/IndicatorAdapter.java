@@ -1,4 +1,4 @@
-package cuongvo.ndroid_walkthrough_with_oop.adapter;
+package cuongvo.android_walkthrough_with_oop.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import cuongvo.ndroid_walkthrough_with_oop.R;
-import cuongvo.ndroid_walkthrough_with_oop.adapter.holder.IndicatorViewHolder;
-import cuongvo.ndroid_walkthrough_with_oop.data.SlideData;
+import cuongvo.android_walkthrough_with_oop.data.SlideData;
+import cuongvo.android_walkthrough_with_oop.R;
+import cuongvo.android_walkthrough_with_oop.adapter.holder.IndicatorViewHolder;
 
 /**
  * Created by cuongvo on 5/28/17.
