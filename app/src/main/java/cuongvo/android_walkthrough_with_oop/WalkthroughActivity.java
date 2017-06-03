@@ -16,6 +16,7 @@ import cuongvo.android_walkthrough_with_oop.adapter.SlidePagerAdapter;
 import cuongvo.android_walkthrough_with_oop.data.SlideData;
 import cuongvo.android_walkthrough_with_oop.util.DataUtil;
 import cuongvo.android_walkthrough_with_oop.view.IndicatorView;
+import cuongvo.android_walkthrough_with_oop.view.MyPagerHelper;
 
 /**
  * Created by cuongvo on 5/28/17.
@@ -32,7 +33,7 @@ public class WalkthroughActivity extends Activity {
     @BindView(R.id.indicator_list)
     IndicatorView mIndicatorView;
 
-    private SlidePagerAdapter mSlidePagerAdapter;
+    private MyPagerHelper mMyPagerHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,34 +67,10 @@ public class WalkthroughActivity extends Activity {
     private void createWalkthroughList() {
         final List<SlideData> list = DataUtil.getWalkthroughList(this);
 
-        mSlidePagerAdapter = new SlidePagerAdapter(this, list, SlidePagerAdapter.WALKTHROUGH_DATA);
-        mWalkthroughList.setAdapter(mSlidePagerAdapter);
-        mSlidePagerAdapter.notifyDataSetChanged();
-
         mIndicatorView.alignCentered();
         mIndicatorView.setSlideData(list);
 
-        mWalkthroughList.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                for (int i = 0; i < list.size(); i++) {
-                    if (mSlidePagerAdapter.getItemAt(i).isSelected()) {
-                        mSlidePagerAdapter.getItemAt(i).setSelected(false);
-                        mSlidePagerAdapter.getItemAt(position).setSelected(true);
-                    }
-                }
-                mIndicatorView.setSlideData(mSlidePagerAdapter.getList());
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+        mMyPagerHelper = new MyPagerHelper(this, mWalkthroughList, mIndicatorView);
+        mMyPagerHelper.setAdapter(new SlidePagerAdapter(this, list, SlidePagerAdapter.WALKTHROUGH_DATA));
     }
 }
