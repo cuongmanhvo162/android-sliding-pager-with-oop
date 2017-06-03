@@ -11,10 +11,11 @@ This repo merely demonstrates how to implement that idea. Using OOP, you can cre
 
 <p/>
 
+##### Screen recorded
 <p align="left">
-[Simple walkthrough]("https://streamable.com/0jv3p")
+<a href="https://streamable.com/0jv3p" target="_blank">Simple walkthrough</a>
 <p/>
 
 <p align="left">
-[Slidding banner]("https://streamable.com/e7xa6") 
+<a href="https://streamable.com/e7xa6" target="_blank">Slidding banner</a>
 <p/>
