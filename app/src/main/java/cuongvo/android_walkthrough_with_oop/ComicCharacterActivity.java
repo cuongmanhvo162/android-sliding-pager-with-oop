@@ -52,7 +52,7 @@ public class ComicCharacterActivity extends Activity {
         createComicCharacterList();
     }
 
-    public void createComicCharacterList(){
+    public void createComicCharacterList() {
         final List<SlideData> list = DataUtil.getComicCharacterList(this);
 
         mSlidePagerAdapter = new SlidePagerAdapter(this, list, SlidePagerAdapter.COMIC_CHARACTER_DATA);
@@ -63,9 +63,13 @@ public class ComicCharacterActivity extends Activity {
         mIndicatorView.setSlideData(list);
 
         mWalkthroughList.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            private int previousPosition = 0;
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.d("Comic","page scrollered");
+                Log.d("Comic", "=> page scrollred position " + position);
+
+                previousPosition = position;
 
                 ComicCharacterData comicCharacterData = (ComicCharacterData) mSlidePagerAdapter.getItemAt(position);
                 mDescription.setText(comicCharacterData.getDescription());
@@ -73,16 +77,34 @@ public class ComicCharacterActivity extends Activity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.d("Comic","page selected");
+                Log.d("Pager", "===> page selected " + position);
+                Log.d("Pager", "===> page selected previous position " + previousPosition);
 
-                for (int i = 0; i < list.size(); i++) {
-                    if (mSlidePagerAdapter.getItemAt(i).isSelected()) {
-                        mSlidePagerAdapter.getItemAt(i).setSelected(false);
-                        mSlidePagerAdapter.getItemAt(position).setSelected(true);
+
+                if (position == previousPosition) {
+                    // The pager moved backward
+                    Log.d("Pager", "move backward");
+
+                    mSlidePagerAdapter.getList().get(position + 1).setSelected(false);
+                    mSlidePagerAdapter.getList().get(position).setSelected(true);
+
+                } else {
+                    // The pager moved forward
+                    Log.d("Pager", "move forward");
+
+                    if (position == 0) {
+                        mSlidePagerAdapter.getList().get(0).setSelected(false);
+
+                    } else {
+                        mSlidePagerAdapter.getList().get(position - 1).setSelected(false);
+
                     }
+                    mSlidePagerAdapter.getList().get(position).setSelected(true);
+
                 }
 
                 mIndicatorView.setSlideData(mSlidePagerAdapter.getList());
+
             }
 
             @Override
