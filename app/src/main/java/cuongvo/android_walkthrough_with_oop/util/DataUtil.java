@@ -21,7 +21,7 @@ public class DataUtil {
 
         ComicCharacterData data1 = new ComicCharacterData();
         data1.setTitle(context.getString(R.string.captain_american));
-        data1.setImageId(R.drawable.img_captian_american);
+        data1.setImageId(R.drawable.img_captain_american);
         data1.setSelected(true);
         data1.setDescription(context.getString(R.string.captain_american_description));
         list.add(data1);
@@ -44,7 +44,7 @@ public class DataUtil {
         data4.setTitle(context.getString(R.string.iron_man));
         data4.setSelected(false);
         data4.setDescription(context.getString(R.string.iron_man_description));
-        data4.setImageId(R.drawable.ironman);
+        data4.setImageId(R.drawable.img_ironman);
         list.add(data4);
 
         ComicCharacterData data5 = new ComicCharacterData();

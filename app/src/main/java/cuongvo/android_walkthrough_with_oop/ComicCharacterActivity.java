@@ -46,13 +46,9 @@ public class ComicCharacterActivity extends Activity {
         ButterKnife.bind(this);
 
         mDescription.setKeyListener(null);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
         createComicCharacterList();
+
     }
 
     public void createComicCharacterList() {

@@ -55,13 +55,8 @@ public class WalkthroughActivity extends Activity {
             }
         });
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         createWalkthroughList();
+
     }
 
     private void createWalkthroughList() {
